@@ -8,6 +8,7 @@
 let startTime = null, previousEndTime = null;
 let currentWordIndex = 0;
 const wordsToType = [];
+let arrayForm;
 
 const modeSelect = document.getElementById("mode");
 const wordDisplay = document.getElementById("word-display");
@@ -27,20 +28,23 @@ const getRandomWord = (mode) => {
 };
 
 // Initialize the typing test
-const startTest = (wordCount = 50) => {
+const startTest = (wordCount = 10) => {
     wordsToType.length = 0; // Clear previous words
     wordDisplay.innerHTML = ""; // Clear display
     currentWordIndex = 0;
     startTime = null;
     previousEndTime = null;
-
+    
     for (let i = 0; i < wordCount; i++) {
         wordsToType.push(getRandomWord(modeSelect.value));
     }
+    
+    const letterToType = wordsToType.join(' ');
+    arrayForm = Array.from(letterToType);
 
-    wordsToType.forEach((word, index) => {
+    arrayForm.forEach((word, index) => {
         const span = document.createElement("span");
-        span.textContent = word + " ";
+        span.textContent = word;
         if (index === 0) span.style.color = "red"; // Highlight first word
         wordDisplay.appendChild(span);
     });
@@ -57,7 +61,7 @@ const startTimer = () => {
 // Calculate and return WPM & accuracy
 const getCurrentStats = () => {
     const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds
-    const wpm = (wordsToType[currentWordIndex].length / 5) / (elapsedTime / 60); // 5 chars = 1 word
+    const wpm = (arrayForm[currentWordIndex].length) / (elapsedTime / 12); // 5 chars = 1 word
     const accuracy = (wordsToType[currentWordIndex].length / inputField.value.length) * 100;
 
     return { wpm: wpm.toFixed(2), accuracy: accuracy.toFixed(2) };
@@ -65,8 +69,7 @@ const getCurrentStats = () => {
 
 // Move to the next word and update stats only on spacebar press
 const updateWord = (event) => {
-    if (event.key === " ") { // Check if spacebar is pressed
-        if (inputField.value.trim() === wordsToType[currentWordIndex]) {
+    if (event.key !== 'F5') { // Check if spacebar is pressed
             if (!previousEndTime) previousEndTime = startTime;
 
             const { wpm, accuracy } = getCurrentStats();
@@ -78,7 +81,7 @@ const updateWord = (event) => {
 
             inputField.value = ""; // Clear input field after space
             event.preventDefault(); // Prevent adding extra spaces
-        }
+        
     }
 };
 
