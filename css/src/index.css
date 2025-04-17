@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+
+.body{
+    background-image: url(../../assets/background_indigo.jpg);
+}
+
+.body .left-part{
+    background-image: url(../../assets/background_black.jpg);
+}
+
+.body .right-part{
+    background-image: url(../../assets/background_gray.jpg);
+}
+
+@keyframes handwrite {
+    
+}
