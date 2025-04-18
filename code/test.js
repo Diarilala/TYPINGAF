@@ -12,7 +12,7 @@ const getRandomWord = (mode) => {
 
 // Initialize the typing test
 let wordsToType = [];
-const startTest = (wordCount = 10) => {
+const startTest = (wordCount = 50) => {
     for (let i = 0; i < wordCount; i++) {
         wordsToType.push(getRandomWord("easy"));
     }
@@ -22,8 +22,8 @@ const startTest = (wordCount = 10) => {
 
     let arrayForm = [];
     arrayForm = Array.from(letterToType);
-    console.log(Array.from(letterToType)[40]);
-    console.log(wordsToType[0]);
+    console.log(arrayForm.length);
+    
 };
 
 (startTest());
