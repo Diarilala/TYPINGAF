@@ -17,7 +17,27 @@
     font-family: "Speedway";
 }
 
+.left-part{
+    animation: slideUp 1s;
+}
+
+.right-part{
+    animation: slideUp 1s ease-out forwards;
+}
+
 @keyframes handwrite {
     0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
     100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }
+
+
+@keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
