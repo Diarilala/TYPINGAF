@@ -9,33 +9,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/speedway" rel="stylesheet">
     <title>TYPINGAF</title>
 </head>
-<body class="body text-center font-semibold">
+<body class="body text-center font-semibold bg-gray-800">
 
-    <main class="flex justify-center p-10 h-screen">
+    <main class="flex justify-center p-10 h-screen "">
 
-        <section class=" left-part rounded-l-3xl w-1/2 bg-black content-center ring-offset-fuchsia-950">
+        <section class=" left-part rounded-l-3xl w-1/2 bg-gray-900 shadow-gray-800 shadow-xl content-center ring-offset-fuchsia-950">
 
-            <h1 class=" title text-white p-4 text-8xl animate-handwrite ">TypingAF</h1>
+            <h1 class=" title text-white p-4 text-7xl">TypingAF</h1>
             <span class="text text-white">The best typing site. Type as fast as you can, until you can't anymore</span>
         </section>
 
-        <section class="right-part rounded-r-3xl w-1/2 content-center bg-gray-700 p-25">
+        <section class="right-part rounded-r-3xl w-1/2 content-center bg-gray-950 p-25">
             <div>
                 <h1 class="welcome text-5xl text-white">Welcome!</h1>
                 <span class="welcome-text text-white">Log in and do your best</span>
             </div>
 
-            <form class="px-1 py-1">
-                <div>
-                    <input id="Email" type="email" placeholder="Username, email" class="email w-5/6 m-2 p-3 border-none rounded-xl outline-none font-Quicksand placeholder:text-gray-400 text-gray-700 bg-pink-50 hover:scale-101"required>
+            <form class="py-10 ">
+                <div class="m-2 content-center rounded-xl bg-pink-50 hover:scale-101">
+                    <i class="fa-solid fa-users content-center"></i>
+                    <input id="Email" type="email" placeholder="Username, email" class="email w-5/6 p-3 border-none  outline-none placeholder:text-gray-400 text-gray-700"required>
                 </div>
-                <div>
-                    <input id="password" type="password" placeholder="Password" class="password w-5/6 1 m-2 p-3 border-none rounded-xl outline-none placeholder:text-gray-400 bg-pink-50 hover:scale-101" required>
+                <div class="m-2 content-center rounded-xl bg-pink-50 hover:scale-101">
+                    <i class=" fa-solid fa-lock"></i>                    
+                    <input id="password" type="password" placeholder="Password" class="password w-5/6 p-3 border-none outline-none placeholder:text-gray-400 text-gray-700" required>
                 </div>
-                <div>
-                    <button id="button" type="submit" class="button bg-linear-to-r from-blue-300 to-blue-700 bg-gradient-to-r w-4/6 m-2 p-2 rounded-sm items-center text-white hover:scale-101 animate-pulse">Login</button>
+                <div class="">
+                    <button id="button" type="submit" class="button bg-linear-to-r from-blue-400 to-blue-700 bg-gradient-to-r w-4/6 m-2 p-2 rounded-sm items-center text-white hover:scale-101 animate-pulse">Login</button>
                 </div>
             </form>
 
@@ -43,5 +46,5 @@
 
     </main>
 </body>
-<script src="../code/login.js"></script>
+<script src="../../code/login.js"></script>
 </html>

@@ -6,17 +6,18 @@
 
 .body{
     box-shadow:22rem white;
-    background-image: url(../../assets/background_indigo.jpg);
 }
 
-.body .left-part{
-    background-image: url(../../assets/background_black.jpg);
-    background-size: 12rem;
+.title{
+    animation : handwrite 500ms linear ; /* fast type */
+    font-family: "Speedway";
+}
+.title{
+    animation : handwrite 500ms linear ; /* fast type */
+    font-family: "Speedway";
 }
 
-.body .right-part{
-    background-image: url(../../assets/background_gray.jpg);
-    background-size: 15rem;
-    
+@keyframes handwrite {
+    0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }
-

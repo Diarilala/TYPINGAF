@@ -16,7 +16,7 @@ button.addEventListener('click', function () {
         const correctPassword = "password";
 
         if (email.value === correctEmail && password.value === correctPassword) {
-            window.location.href = 'main/main.html';
+            window.location.href = '../main/main.html';
         } else {
             alert("Invalid email or password");
         }
@@ -26,3 +26,4 @@ button.addEventListener('click', function () {
 
     }, 3000);
 });
+
