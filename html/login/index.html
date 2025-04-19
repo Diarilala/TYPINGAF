@@ -3,66 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/output.css">
+    <link rel="stylesheet" href=../../css/src/output.css>
+    <link rel="stylesheet" href=../../css/src/index.css>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/speedway" rel="stylesheet">
     <title>TYPINGAF</title>
 </head>
-<body class="text-center font-semibold bg-[url(c:\Users\Lavs Andriantsoa\Desktop\TypingAF\assets\background_2.png)]">
+<body class="body text-center font-semibold bg-gray-950">
 
-    <main class="flex justify-center p-10 h-screen">
+    <main class="flex justify-center p-10 h-screen gap-5">
 
-        <section class="rounded-l-3xl w-1/2 bg-black content-center"    >
-            <h1 class="text-white p-4 text-7xl "Quicksand">TypingAF</h1>
-            <span class="text-white">The best typing site. Type as fast as you can, until you can't anymore</span>
+        <section class=" left-part rounded-3xl w-1/2 bg-gray-800 content-center">
+
+            <h1 class=" title text-yellow-500 p-4 text-7xl">TypingAF</h1>
+            <span class="text text-white">The best typing site. Type as fast as you can, until you can't anymore</span>
         </section>
 
-        <section class="rounded-r-3xl w-1/2 bg-gray-700 p-25">
-            <div class="">
-                <h1 class="text-5xl text-white">Welcome!</h1>
-                <span class="text-white">Log in and do your best</span>
+        <section class="right-part rounded-3xl w-1/2 content-center shadow-2xl bg-gray-900 p-20">
+            <div>
+                <h1 class="welcome text-5xl text-white">Welcome!</h1>
+                <span class="welcome-text text-white">Log in and do your best</span>
             </div>
 
-            <form class="px-1 py-1">
-                <div>
-                    <input id="Email" type="email" placeholder="Username, email" class="email w-5/6 m-2 p-3 border-none rounded-sm outline-none placeholder:text-gray-400 bg-pink-50 hover:scale-101"required>
+            <form class="py-10 ">
+                <div class="m-2 content-center rounded-xl bg-pink-50 hover:scale-101">
+                    <i class="fa-solid fa-users content-center"></i>
+                    <input id="Email" type="email" placeholder="Username, email" class="email w-5/6 p-3 border-none  outline-none placeholder:text-gray-400 text-gray-700"required>
                 </div>
-                <div>
-                    <input id="password" type="password" placeholder="Password" class="password w-5/6 1 m-2 p-3 border-none rounded-sm outline-none placeholder:text-gray-400 bg-pink-50 hover:scale-101" required>
+                <div class="m-2 content-center rounded-xl bg-pink-50 hover:scale-101">
+                    <i class=" fa-solid fa-lock"></i>                    
+                    <input id="password" type="password" placeholder="Password" class="password w-5/6 p-3 border-none outline-none placeholder:text-gray-400 text-gray-700" required>
                 </div>
-                <div>
-                    <button id="button" type="submit" class="button bg-blue-700 bg-gradient-to-r w-4/6 m-2 p-2 rounded-sm items-center text-white hover:scale-101 animate-pulse">Login</button>
+                <div class="">
+                    <button id="button" type="submit" class="button bg-linear-to-r from-blue-400 to-blue-700 bg-gradient-to-r w-4/6 m-2 p-2 rounded-sm items-center text-white hover:scale-101 animate-pulse">Login</button>
                 </div>
+
+                    <a href="#" class=" text-blue-100 font-light">forget password</a>
+
+            </form>
+
+            <form class="caret-black">
+                <p class="text-white text-xl">Or log in with</p>
+                <section class="flex justify-center gap-0.5">
+                        <a href="#" class="hover:scale-110">
+                            <i class="fa-brands fa-facebook-f content-center m-5 text-2xl h-9 w-9 text-white border-1 border-white rounded-full"></i>
+                        </a>
+                        <a href="#" class="hover:scale-110 rounded-full">
+                            <i class="fa-brands fa-google content-center m-5 text-2xl h-9 w-9 text-white border-1 border-white rounded-full"></i>
+                        </a>
+                </section>
             </form>
 
         </section>
 
     </main>
 </body>
-
-<script>
-    const email = document.querySelector(".email");
-const password = document.querySelector(".password");
-const button = document.querySelector(".button");
-
-button.addEventListener('click', function () {
-    button.textContent = "Wait for it. . . . .";
-    button.disabled = true;
-
-    setTimeout(function () {
-        const correctEmail = "student@gmail.com";
-        const correctPassword = "password";
-
-        if (email.value === correctEmail && password.value === correctPassword) {
-            window.location.href = 'mainpage.html';
-        } else {
-            alert("Invalid email or password");
-        }
-
-    }, 3000);
-});
-
-</script>
+<script src="../../code/login.js"></script>
+  
 </html>
