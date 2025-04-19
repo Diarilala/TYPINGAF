@@ -12,28 +12,37 @@ const sixty = document.getElementById("sixty");
 const thirty = document.getElementById("thirty");
 const fifteen = document.getElementById("fifteen");
 
-//time test
-let timeLeft = 60; 
-let clockRace; 
+let timeLeft = 10; 
+let timer; 
 let timerStarted = false; 
-const timer = document.getElementById("timer"); 
+const timerDisplay = document.getElementById("timer");
 
-// Function to update the timer display
 function updateTimer() {
-    timer.textContent = timeLeft;
+    timerDisplay.textContent = timeLeft;
     if (timeLeft <= 0) {
-        clearInterval(clockRace); 
+        clearInterval(timer); 
         inputField.disabled = true; 
+        const { wpm, accuracy } = getCurrentStats();
+            results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
     }
-    timeLeft--; 
+    timeLeft--;
+}
+
+function endTest(){
+    if(inputValue.length == arrayForm.length){
+        clearInterval(timer);
+        inputField.disabled = true;
+        const { wpm, accuracy } = getCurrentStats();
+            results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
+    }
 }
 
 // Start timer on first keypress
 inputField.addEventListener("keydown", () => {
     if (!timerStarted) {
         timerStarted = true;
-        timeLeft = 60; 
-        timer = setInterval(updateTimer, 1000);
+        timeLeft = 10; 
+        timer = setInterval(updateTimer, 1000); 
     }
 });
 
@@ -50,7 +59,7 @@ const getRandomWord = (mode) => {
 };
 
 // Initialize the typing test
-const startTest = (wordCount = 10) => {
+const startTest = (wordCount = 50) => {
     wordsToType.length = 0; // Clear previous words
     wordDisplay.innerHTML = ""; // Clear display
 
@@ -83,15 +92,6 @@ const startTimer = () => {
     if (!startTime) startTime = Date.now();
 };
 
-// Calculate and return WPM & accuracy
-// const getCurrentStats = () => {
-//     const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds
-//     const wpm = (arrayForm[currentLetterIndex].length) / (elapsedTime / 12); // 5 chars = 1 word
-//     const accuracy = (arrayForm[currentLetterIndex].length / inputField.value.length) * 100;
-
-    
-// };
-
 let incorrectLetter = 0;
 const getCurrentStats = () => {
     const elapsedTime = 60 - timeLeft;
@@ -103,13 +103,10 @@ const getCurrentStats = () => {
 // Move to the next word and update stats only on spacebar press
 const updateWord = (event) => {
     if (event.key !== "Backspace") { // Check if spacebar is pressed    
-            const { wpm, accuracy } = getCurrentStats();
-            results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
+            // const { wpm, accuracy } = getCurrentStats();
+            // results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
             currentLetterIndex++;
             highlightNextWord();
-
-            // inputField.value = ""; // Clear input field after space
-            // event.preventDefault(); // Prevent adding extra spaces
     }else{
         if(currentLetterIndex >= 0){
         currentLetterIndex--;
@@ -118,9 +115,7 @@ const updateWord = (event) => {
             currentLetterIndex = 0;
         }
     }
-    // else if(event.key == 'Backspace'){
-    //     alert('bonjour tout le monde');
-    // }
+   
 };
 
 // Highlight the previous word
@@ -131,7 +126,7 @@ const highlightPreviousWord = () => {
     if (currentLetterIndex < wordElements.length) {
         const currentWordElement = wordElements[currentLetterIndex];
 
-        currentWordElement.style.color = "black";
+        currentWordElement.style.color = "white";
         
     }
 };
@@ -158,10 +153,6 @@ const highlightNextWord = () => {
         }
     }
 };
-
-inputField.addEventListener("input", () => {
-
-})
 
 // Event listeners
 // Attach `updateWord` to `keydown` instead of `input`

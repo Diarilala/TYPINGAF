@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 :root{
@@ -16,29 +17,79 @@
     --police3: "Playwrite RO", cursive;
     --police4: "Dancing Script";
     --police5: "Pixelify Sans";
+    --police6: "Geo";
+}
+ 
+header{
+    margin-top: 20px;
 }
 
-.success{
-    color: aquamarine;
+#title{
+    font-size: 2.6rem;
+    font-family: var(--police6);
+}
+
+.slogan-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.slogan-container #slogan{
+    font-family: var(--police5);
+    font-size: 1.5rem;
+    margin-left: 5%;
+}
+
+.overview{
+    margin-left: 10%;
+}
+
+.settings{
+    display: flex;
+    justify-content: center;
+    font-family: var(--police6);
+    font-size: larger;
+    padding: 1rem;
 }
 
 .chrono-set{
     display: flex;
     gap: 1rem;
-    justify-content: space-between;
-    width: 100px;
 }
 
-#sixty, #thirty, #fifteen{
-    padding: 10px;
-    background-color: #0d7cc6;
+.options{
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    align-items: center;
+    border-radius: 5px;
+    width: 35%;
+    height: 40px;
 }
 
-#sixty:hover, #thirty:hover, #fifteen:hover{
-    cursor: pointer;
-    background-color: goldenrod;
+main{
+    margin-inline: auto;
+    height: 500px;
 }
 
-#slogan{
+#word-display{
+    height: 350px;
+    color: white;
+}
+
+#input-field{
+    width: 100%;
+    height: 100px;
+    outline: none;
+}
+
+#timer{
     font-family: var(--police5);
+    display: block;
+}
+
+#results{
+    margin-left: 2rem;
 }

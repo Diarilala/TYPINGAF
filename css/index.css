@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --police1: "Quicksand";
+    --police2: sans-serif;
+    --primary-color: #0d7cc6;
+    --secondary-color: #f68712;
+    --tertiary-color: #90c2e6;
+    --black: #010101;
+    --white: #f2f2f2;
+    --background: aliceblue;
+    --police3: "Playwrite RO", cursive;
+    --police4: "Dancing Script";
+    --police5: "Pixelify Sans";
+}
+
+body{
+    height: 100%;
+}
+
+#slogan{
+    font-family: var(--police5);
+    margin-left: 60px;
+}
+
+
