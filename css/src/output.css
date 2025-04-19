@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.4 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -9,7 +9,7 @@
       "Courier New", monospace;
     --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-blue-700: oklch(48.8% 0.243 264.376);
-    --color-indigo-700: oklch(45.7% 0.24 277.023);
+    --color-fuchsia-950: oklch(29.3% 0.136 325.661);
     --color-pink-50: oklch(97.1% 0.014 343.198);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-700: oklch(37.3% 0.034 259.733);
@@ -20,8 +20,11 @@
     --text-5xl--line-height: 1;
     --text-7xl: 4.5rem;
     --text-7xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
     --font-weight-semibold: 600;
     --radius-sm: 0.25rem;
+    --radius-xl: 0.75rem;
     --radius-3xl: 1.5rem;
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --default-font-family: var(--font-sans);
@@ -180,38 +183,20 @@
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
-  }
   .h-screen {
     height: 100vh;
-  }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
-  .w-4 {
-    width: calc(var(--spacing) * 4);
-  }
   .w-4\/6 {
     width: calc(4/6 * 100%);
-  }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
   }
   .w-5\/6 {
     width: calc(5/6 * 100%);
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .animate-pulse {
     animation: var(--animate-pulse);
-  }
-  .resize {
-    resize: both;
   }
   .content-center {
     align-content: center;
@@ -225,6 +210,9 @@
   .rounded-sm {
     border-radius: var(--radius-sm);
   }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
   .rounded-l-3xl {
     border-top-left-radius: var(--radius-3xl);
     border-bottom-left-radius: var(--radius-3xl);
@@ -233,19 +221,12 @@
     border-top-right-radius: var(--radius-3xl);
     border-bottom-right-radius: var(--radius-3xl);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .border-none {
     --tw-border-style: none;
     border-style: none;
   }
   .bg-black {
     background-color: var(--color-black);
-  }
-  .bg-blue-700 {
-    background-color: var(--color-blue-700);
   }
   .bg-gray-700 {
     background-color: var(--color-gray-700);
@@ -264,33 +245,6 @@
     --tw-gradient-position: to right in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-\[url\(\'\.\.\/assets\/background_indigo\.jpg\'\)\] {
-    background-image: url('../assets/background_indigo.jpg');
-  }
-  .bg-\[url\(\.\.\/assets\/background_indigo\.jpg\)\] {
-    background-image: url(../assets/background_indigo.jpg);
-  }
-  .bg-\[url\(\.\.\/html\/background_indigo\.jpg\)\] {
-    background-image: url(../html/background_indigo.jpg);
-  }
-  .bg-\[url\(\.\.\\html\/background_indigo\.jpg\)\] {
-    background-image: url(..\html/background_indigo.jpg);
-  }
-  .bg-\[url\(\.\.\\html\\background_indigo\.jpg\)\] {
-    background-image: url(..\html\background_indigo.jpg);
-  }
-  .bg-\[url\(\.\\html\\background_indigo\.jpg\)\] {
-    background-image: url(.\html\background_indigo.jpg);
-  }
-  .bg-\[url\(\\html\\background_indigo\.jpg\)\] {
-    background-image: url(\html\background_indigo.jpg);
-  }
-  .bg-\[url\(html\/background_indigo\.jpg\)\] {
-    background-image: url(html/background_indigo.jpg);
-  }
-  .bg-\[url\(html\\background_indigo\.jpg\)\] {
-    background-image: url(html\background_indigo.jpg);
-  }
   .from-blue-300 {
     --tw-gradient-from: var(--color-blue-300);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -298,12 +252,6 @@
   .to-blue-700 {
     --tw-gradient-to: var(--color-blue-700);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-  .bg-cover {
-    background-size: cover;
-  }
-  .bg-center {
-    background-position: center;
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -333,23 +281,22 @@
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
-  .text-7xl {
-    font-size: var(--text-7xl);
-    line-height: var(--tw-leading, var(--text-7xl--line-height));
+  .text-8xl {
+    font-size: var(--text-8xl);
+    line-height: var(--tw-leading, var(--text-8xl--line-height));
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .text-gray-700 {
+    color: var(--color-gray-700);
+  }
   .text-white {
     color: var(--color-white);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .ring-offset-fuchsia-950 {
+    --tw-ring-offset-color: var(--color-fuchsia-950);
   }
   .outline-none {
     --tw-outline-style: none;
@@ -370,11 +317,6 @@
       }
     }
   }
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-gradient-position {
   syntax: "*";
@@ -422,11 +364,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-scale-x {
   syntax: "*";
   inherits: false;
@@ -450,7 +387,6 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;
       --tw-gradient-via: #0000;
@@ -461,7 +397,6 @@
       --tw-gradient-via-position: 50%;
       --tw-gradient-to-position: 100%;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
       --tw-scale-x: 1;
       --tw-scale-y: 1;
       --tw-scale-z: 1;
