@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --police1: "Quicksand";
+    --police2: sans-serif;
+    --primary-color: #0d7cc6;
+    --secondary-color: #f68712;
+    --tertiary-color: #90c2e6;
+    --black: #010101;
+    --white: #f2f2f2;
+    --background: aliceblue;
+    --police3: "Playwrite RO", cursive;
+    --police4: "Dancing Script";
+    --police5: "Pixelify Sans";
+}
+
+.success{
+    color: aquamarine;
+}
+
+.chrono-set{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    width: 100px;
+}
+
+#sixty, #thirty, #fifteen{
+    padding: 10px;
+    background-color: #0d7cc6;
+}
+
+#sixty:hover, #thirty:hover, #fifteen:hover{
+    cursor: pointer;
+    background-color: goldenrod;
+}
+
+#slogan{
+    font-family: var(--police5);
+}

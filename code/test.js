@@ -1,3 +1,15 @@
+let startTime = null, previousEndTime = null;
+let currentLetterIndex = 0;
+let arrayForm;
+
+const modeSelect = document.getElementById("mode");
+const wordDisplay = document.getElementById("word-display");
+const inputField = document.getElementById("input-field");
+const results = document.getElementById("results");
+const sixty = document.getElementById("sixty");
+const thirty = document.getElementById("thirty");
+const fifteen = document.getElementById("fifteen");
+
 const words = {
     easy: ["applee", "bananq", "grapee", "orange", "cherry"],
     medium: ["keyboard", "monitor", "printer", "charger", "battery"],
@@ -25,5 +37,7 @@ const startTest = (wordCount = 50) => {
     console.log(arrayForm.length);
     
 };
+
+
 
 (startTest());
